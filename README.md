@@ -18,13 +18,13 @@ Para el desarrollo, no haremos commits a la rama "main", sino que haremos como e
 
 - Productos favoritos (cookie).
 
-- Integración con OpenStreetMap en la pantalla de "Conocenos".
+- Aj Integración con OpenStreetMap en la pantalla de "Conocenos".
 
 - M Footer.
 
-- Categorías (tags en productos en la bbdd para filtrar).
+- Aj Categorías (tags en productos en la bbdd para filtrar).
 
-- Migas de pan.
+- Aj Migas de pan.
 
 - Mejor base de datos con más ropa e imagenes integradas en la página, no solo placeholders.
 
