@@ -10,7 +10,7 @@
 // (Estos son los valores por defecto de XAMPP)
 $db_host = "localhost";   // Servidor
 $db_usuario = "root";     // Usuario de la BD
-$db_pass = "root";        // Contraseña (en XAMPP por defecto es vacía)
+$db_pass = "";        // Contraseña (en XAMPP por defecto es vacía)
 $db_nombre = "startshop";  // Nombre de tu base de datos
 
 // 2. Crear la conexión
