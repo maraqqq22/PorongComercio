@@ -6,28 +6,28 @@ Para el desarrollo, no haremos commits a la rama "main", sino que haremos como e
 
 # TO-DO (usando multishop como referencia, y en orden de prioridad):
 
-- D Carrito con cookies e integración para poder añadir productos y quitarlos.
+- (D) Carrito con cookies e integración para poder añadir productos y quitarlos.
 
-- M Productos populares y productos en oferta en el desplegable de "Tienda".
+- (M) Productos populares y productos en oferta en el desplegable de "Tienda".
 
--  M Lupa para buscar productos (que se busque por nombre y contenido de la descripcion).
+- (M) Lupa para buscar productos (que se busque por nombre y contenido de la descripcion).
 
-- Checkout (Simular compra con pasarela de pago).
+- (As) Checkout (Simular compra con pasarela de pago).
 
-- D Apartado de mi cuenta
+- (D) Apartado de mi cuenta
 
-- Productos favoritos (cookie).
+- (G) Productos favoritos (cookie).
 
-- Aj Integración con OpenStreetMap en la pantalla de "Conocenos".
+- (Aj) Integración con OpenStreetMap en la pantalla de "Conocenos".
 
-- M Footer.
+- (M) Footer.
 
-- Aj Categorías (tags en productos en la bbdd para filtrar).
+- (Aj) Categorías (tags en productos en la bbdd para filtrar).
 
-- Aj Migas de pan.
+- (Aj) Migas de pan.
 
-- Mejor base de datos con más ropa e imagenes integradas en la página, no solo placeholders.
+- (As) Mejor base de datos con más ropa e imagenes integradas en la página, no solo placeholders.
 
-- D Botoncito dinámico de volver arriba.
+- (D) Botoncito dinámico de volver arriba.
 
-- Apartado del idioma con traducciones
+- (G) Apartado del idioma con traducciones
