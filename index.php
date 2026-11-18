@@ -58,6 +58,9 @@ require_once 'conexion.php';
             </div>
         </div>
     </nav>
+
+    <?php include 'breadcrumbs.php'; ?>
+    
     <!-- Contenidos propios de la página-->
     <?php
     switch ($pagina) {
