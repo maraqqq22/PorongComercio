@@ -1,9 +1,32 @@
 <?php
+
+// Recogemos el tipo por si se accede de forma independiente, por defecto 'todos'
+$tipo = $_GET['tipo'] ?? 'todos';
+
 try {
-    // Consultar todos los productos de la tabla
-    $productos = $conexion->query("SELECT id, referencia, nombre, precio, precio_rebajado, descripcion, valoracion FROM productos");
-    //$stmt = $conexion->query("SELECT id, referencia, nombre, precio, precio_rebajado, descripcion, valoracion FROM productos");
-    //$productos = $stmt->fetchAll();
+  
+    if ($tipo === 'populares') {
+        $titulo_seccion = "Productos Más Populares";
+        $sql = "SELECT id, referencia, nombre, precio, precio_rebajado, descripcion, valoracion, es_original, ranking_popular 
+                FROM productos 
+                WHERE ranking_popular IS NOT NULL 
+                ORDER BY ranking_popular ASC 
+                LIMIT 3";
+    
+    
+    } elseif ($tipo === 'ofertas') {
+        $titulo_seccion = "Productos en Oferta";
+        $sql = "SELECT id, referencia, nombre, precio, precio_rebajado, descripcion, valoracion, ranking_popular 
+                FROM productos 
+                WHERE precio_rebajado IS NOT NULL AND precio_rebajado > 0";
+    
+    }else {
+        $titulo_seccion = "Todos los productos";
+        $sql = "SELECT id, referencia, nombre, precio, precio_rebajado, descripcion, valoracion, es_original, ranking_popular 
+                FROM productos";
+    }
+
+    $productos = $conexion->query($sql);
 } catch (PDOException $e) {
     die("Error al consultar productos: " . $e->getMessage());
 }
@@ -11,7 +34,7 @@ try {
 <!-- Related items section-->
 <section class="py-5 bg-light">
     <div class="container px-4 px-lg-5 mt-5">
-        <h2 class="fw-bolder mb-4">Todos los productos</h2>
+        <h2 class="fw-bolder mb-4"><?= htmlspecialchars($titulo_seccion) ?></h2>
         <!-- 3. Contenedor HTML donde se renderizarán los productos -->
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <?php foreach ($productos as $producto): ?>
@@ -24,6 +47,24 @@ try {
                 
                 <div class="col mb-5">
                     <div class="card h-100">
+                        
+                        <!-- Podio badge (Solo se muestra en la sección de populares) -->
+                        <?php if ($tipo === 'populares' && !is_null($producto['ranking_popular'])): ?>
+                            <?php 
+                                $podio = [
+                                    1 => ['texto' => '#1 Más Popular', 'clase' => 'bg-warning text-dark'],
+                                    2 => ['texto' => '#2 Popular',     'clase' => 'bg-secondary text-white'],
+                                    3 => ['texto' => '#3 Popular',     'clase' => 'bg-danger text-white']
+                                ];
+                                $puesto = (int)$producto['ranking_popular'];
+                            ?>
+                            <?php if (isset($podio[$puesto])): ?>
+                                <div class="badge <?= $podio[$puesto]['clase'] ?> position-absolute" style="top: 0.5rem; left: 0.5rem">
+                                    <?= $podio[$puesto]['texto'] ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
                         <!-- Sale badge (Solo se muestra si está rebajado) -->
                         <?php if ($esta_rebajado): ?>
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>

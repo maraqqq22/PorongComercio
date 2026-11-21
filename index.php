@@ -6,6 +6,7 @@
 <?php
 $pagina = $_GET['p'] ?? null;
 $idproducto = $_GET['id'] ?? null;
+$tipo = $_GET['tipo'] ?? 'todos';  
 // Conexión con la bbdd
 require_once 'conexion.php';
 ?>
@@ -34,7 +35,7 @@ require_once 'conexion.php';
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link <?php if ($pagina != 'tienda') print 'active'; ?>" aria-current="page" href="index.php">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($pagina != 'tienda') print 'active'; ?>" aria-current="page" href="index.php">cio</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php?p=contacta">Conócenos</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle <?php if ($pagina == 'tienda') print 'active'; ?>" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
@@ -43,8 +44,8 @@ require_once 'conexion.php';
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item disabled" href="index.php?p=tienda">Productos Populares</a></li>
-                            <li><a class="dropdown-item disabled" href="index.php?p=tienda">Productos en Oferta</a></li>
+                            <li><a class="dropdown-item" href="index.php?p=tienda&tipo=populares">Productos Populares</a></li>
+                            <li><a class="dropdown-item" href="index.php?p=tienda&tipo=ofertas">Productos en Oferta</a></li>
                         </ul>
                     </li>
                 </ul>
