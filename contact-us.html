@@ -10,38 +10,80 @@
                     <!-- inputs -->
                     <div>
                         <!-- input NOMBRE -->
-                        <input class='form-control' type='text' name='nombre' maxlength='40' placeholder='Nombre *' required></input>
+                        <input class='form-control' type='text' name='nombre' maxlength='40' placeholder='Nombre *'
+                            required></input>
                         <br>
                         <!-- input APELLIDOS -->
-                        <input class='form-control' type='text' name='apellidos' maxlength='80' placeholder='Apellidos *' required></input>
+                        <input class='form-control' type='text' name='apellidos' maxlength='80'
+                            placeholder='Apellidos *' required></input>
                         <br>
                         <!-- input TELÉFONO -->
-                        <input class='form-control' type='text' name='phone' maxlength='30' placeholder='Teléfono *' required></input>
+                        <input class='form-control' type='text' name='phone' maxlength='30' placeholder='Teléfono *'
+                            required></input>
                         <br>
                         <!-- input CORREO ELECTRÓNICO -->
-                        <input class='form-control' type='text' ftype='email' name='email' maxlength='100' placeholder='Correo electrónico *' required></input>
+                        <input class='form-control' type='text' ftype='email' name='email' maxlength='100'
+                            placeholder='Correo electrónico *' required></input>
                         <br>
                         <!-- textarea COMENTARIOS -->
-                        <textarea class='form-control' class='form-control' name='comentarios' placeholder='Indica aquí tus comentarios.'></textarea>
+                        <textarea class='form-control' class='form-control' name='comentarios'
+                            placeholder='Indica aquí tus comentarios.'></textarea>
                         <br>
                         <p><b>Envía tu consulta</b>:</p>
                         <!-- botones de ENVIAR & RESTABLECER -->
                         <div>
                             <div class="d-flex">
-                                <button class='form-control' type='submit' value='Enviar' title='Enviar'><i class="bi bi-arrow-right"></i>
+                                <button class='form-control' type='submit' value='Enviar' title='Enviar'><i
+                                        class="bi bi-arrow-right"></i>
                                     Enviar
                                 </button>&nbsp;
-                                <button class='form-control' type='reset' name='reset' value='Restablecer' title='Restablecer'><i class="bi bi-eraser"></i>
+                                <button class='form-control' type='reset' name='reset' value='Restablecer'
+                                    title='Restablecer'><i class="bi bi-eraser"></i>
                                     Restablecer
                                 </button>
                             </div>
                             <!-- Letra pequeña -->
-                            <br><div class="small mb-1">Al enviar tu consulta, aceptas nuestras Condiciones de uso. <a href="index.php" class="link">¿No lo tienes claro? <b>Volver a Inicio</b></a>.</div>
+                            <br>
+                            <div class="small mb-1">Al enviar tu consulta, aceptas nuestras Condiciones de uso. <a
+                                    href="index.php" class="link">¿No lo tienes claro? <b>Volver a Inicio</b></a>.</div>
                         </div>
                     </div>
                 </form><br>
             </div>
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+
+            <!-- Ubicación de nuestra tienda -->
+            <div class="col-md-6">
+
+                <h2 class="h3 fw-bold mb-3">Dónde estamos</h2>
+
+                <p class="text-muted mb-3">
+                    Nuestra tienda tiene como ubicación de referencia
+                    el campus de la Universidad de Castilla-La Mancha
+                    en Albacete.
+                </p>
+
+                <!-- Mapa interactivo de OpenStreetMap -->
+                <div class="mapa-contacto">
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed?bbox=-1.8578079342842104%2C38.978175189887466%2C-1.8560054898262026%2C38.979286545182255&amp;layer=mapnik&amp;marker=38.978731912262404%2C-1.8569067120552063"
+                        title="Ubicación de PorongComercio en el campus de la UCLM de Albacete" loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Enlace para abrir el mapa completo -->
+                <div class="mt-3">
+                    <a href="https://www.openstreetmap.org/?mlat=38.978732&amp;mlon=-1.856907#map=19/38.978731/-1.856907"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Ver el mapa más grande
+                    </a>
+                </div>
+                <p class="small text-muted mt-3">
+                    Ubicación de referencia utilizada para el proyecto académico.
+                    Mapa proporcionado por OpenStreetMap.
+                </p>
+            </div>
+
         </div>
-    </div>
 </section>
